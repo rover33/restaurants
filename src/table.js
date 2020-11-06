@@ -15,6 +15,7 @@ let Table = () => {
       })
       .then(res => res.json())
       .then(tablesArray => {
+          //sorted Alphabetically
         setTableArray(tablesArray.sort((a, b) => (a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1)))
         setIsLoading(false)
       })

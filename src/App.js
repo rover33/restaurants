@@ -20,7 +20,7 @@ function App() {
   return (
     <div className="App">
       <Pagination 
-      size="small"
+        size="small"
       />
       <Table />
     </div>
