@@ -1,23 +1,28 @@
-import logo from './logo.svg';
+import {useState} from "react";
 import './App.css';
+import { Pagination } from "@material-ui/lab";
+import Table from './table';
+import usePagination from './paginations';
 
 function App() {
+
+  let [page, setPage] = useState(1);
+  const PER_PAGE = 10;
+
+  // const count = Math.ceil(data.length / PER_PAGE);
+  // const _Data = usePagination(data, PER_PAGE);
+
+  const handleChange = (e, p) => {
+    setPage(p);
+    // _Data.jump(p);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Pagination 
+      size="small"
+      />
+      <Table />
     </div>
   );
 }
