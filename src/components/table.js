@@ -1,5 +1,5 @@
 import {  useContext } from "react";
-import { RestaurantContext } from "../context";
+import { RestaurantContext } from "../contexts/context";
 
 let Table = () => {
   const [tablesArray, setTablesArray] = useContext(RestaurantContext)

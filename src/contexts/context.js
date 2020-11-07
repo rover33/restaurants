@@ -1,9 +1,14 @@
-import React, { createContext, useState, useEffect } from "react";
+import React, { createContext, useState, useEffect, useReducer } from "react";
 
 
 export const RestaurantContext = createContext();
 
+const tablesReducer = (state, action) => {
+    
+}
+
 export const RestuarntProvider  = props => {
+
     const [tablesArray, setTableArray] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
   
@@ -26,6 +31,7 @@ export const RestuarntProvider  = props => {
           console.log("stop it");
         })
     }, []);
+
     
     return (
         <RestaurantContext.Provider value={[tablesArray, setTableArray ]}>

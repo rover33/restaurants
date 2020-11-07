@@ -3,7 +3,7 @@ import './App.css';
 import { Pagination } from "@material-ui/lab";
 import Table from './components/table';
 import usePagination from './components/paginations';
-import {RestuarantProvider, RestuarntProvider} from "./context"
+import {RestuarantProvider, RestuarntProvider} from "./contexts/context"
 import Searchbox from "./components/SearchBox";
 
 function App() {
