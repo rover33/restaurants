@@ -2,11 +2,11 @@ import {  useContext } from "react";
 import { RestaurantContext } from "../contexts/context";
 
 let Table = () => {
-  const [tablesArray, setTablesArray] = useContext(RestaurantContext)
+  const [tablesDisplayArr, setTablesDisplayArr] = useContext(RestaurantContext)
 
     let renderTables = () => {
       return(
-        tablesArray.map(el => (
+        tablesDisplayArr.map(el => (
             <tr key={el.id} className="tableList" >
                 <td>{el.name}</td>
                 <td>{el.city}</td>

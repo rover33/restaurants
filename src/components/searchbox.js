@@ -1,19 +1,21 @@
-import React, { Component, useState, useContext } from "react";
+import React, { useState, useContext } from "react";
 import {RestaurantContext} from "../contexts/context";
 
 
 const SearchBox = () => {
-    const [search, setSearch] = useState("");
-    const [tablesArray, setTablesArray] = useContext(RestaurantContext);
-
-    // const updateSearch = e => {
-    //     setSearchString(searchString)
-    //     // setTablesArray(prevTablesArray => [...prevTablesArray, {name: tablesArray.name}])
-    // }
+    const [searchString, setSearchString] = useState("");
+    const [tablesDisplayArr, setTablesDisplayArr, tableLookUpArr, setTableLookUpArr] = useContext(RestaurantContext);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        tablesArray.filter(search)
+        if (tableLookUpArr === "") return tableLookUpArr
+        let filterArr = tableLookUpArr.filter(function(item){
+            if (item.name.toLowerCase().includes(searchString) || item.city.toLowerCase().includes(searchString) || item.genre.toLowerCase().includes(searchString)) {
+                return true
+            } 
+            return false
+        }) 
+        setTablesDisplayArr(filterArr)
     }
 
     return (
@@ -21,13 +23,13 @@ const SearchBox = () => {
             <input 
             type="text" 
             name="Restaurant, City, Genre" 
-            value={tablesArray.name} 
-            onChange={e => setSearch(e.target.value)}
+            placeholder="Restaurant, City, Genre"
+            value={tableLookUpArr.name} 
+            onChange={e => setSearchString(e.target.value)}
             />
             <button>Submit</button>
         </form>
     )
-
 }
 
 export default SearchBox;

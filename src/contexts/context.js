@@ -9,7 +9,8 @@ const tablesReducer = (state, action) => {
 
 export const RestuarntProvider  = props => {
 
-    const [tablesArray, setTableArray] = useState([]);
+    const [tablesDisplayArr, setTablesDisplayArr] = useState([]);
+    const [tableLookUpArr, setTableLookUpArr] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
   
   
@@ -22,9 +23,11 @@ export const RestuarntProvider  = props => {
               }
         })
         .then(res => res.json())
-        .then(tablesArray => {
+        .then(tablesDisplayArr => {
             //sorted Alphabetically
-          setTableArray(tablesArray.sort((a, b) => (a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1)))
+          const sortData = tablesDisplayArr.sort((a, b) => (a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1))
+          setTablesDisplayArr(sortData)
+          setTableLookUpArr(sortData)
           setIsLoading(false)
         })
         .catch(() => {
@@ -34,7 +37,7 @@ export const RestuarntProvider  = props => {
 
     
     return (
-        <RestaurantContext.Provider value={[tablesArray, setTableArray ]}>
+        <RestaurantContext.Provider value={[tablesDisplayArr, setTablesDisplayArr, tableLookUpArr, setTableLookUpArr ]}>
             {props.children}
         </RestaurantContext.Provider>
     )
