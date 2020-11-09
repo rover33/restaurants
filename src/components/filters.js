@@ -12,22 +12,42 @@ const Filters = () => {
             return item.state
         })
         
-        let filterState = Array.from(new Set(stateArr))
-        console.log(filterState)
+        let filterState = Array.from(new Set(stateArr)).sort((a, b) => (a.toLowerCase() > b.toLowerCase() ? 1 : -1))
 
        return(
            filterState.map(el => (
-            <option key={el.id}>
-                {el.state}
+            <option key={el}>
+                {el}
+            </option>
+         ))
+       )
+    }
+
+    const renderGenre = () => {
+        let genreArr = filterArr.map((item) => {
+            return item.genre
+        })
+        
+        let filterGenre = Array.from(new Set(genreArr)).sort((a, b) => (a.toLowerCase() > b.toLowerCase() ? 1 : -1))
+
+       return(
+           filterGenre.map(el => (
+            <option key={el}>
+                {el}
             </option>
          ))
        )
     }
 
     return (
-        <select >
-            {renderState()}
-        </select>
+        <>
+            <select >
+                {renderState()}
+            </select>
+            <select>
+                {renderGenre()}
+            </select>
+        </>
     )
 }
 
