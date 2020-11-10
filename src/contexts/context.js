@@ -4,7 +4,7 @@ import React, { createContext, useState, useEffect, useReducer } from "react";
 export const RestaurantContext = createContext();
 
 
-export const RestuarntProvider  = props => {
+export const RestuarantProvider  = props => {
 
     const [tablesDisplayArr, setTablesDisplayArr] = useState([]);
     const [tableLookUpArr, setTableLookUpArr] = useState([]);

@@ -2,6 +2,7 @@ import {  useContext } from "react";
 import { RestaurantContext } from "../contexts/context";
 import "../styles/table.css"
 
+
 let Table = () => {
   const [tablesDisplayArr, setTablesDisplayArr] = useContext(RestaurantContext)
 
