@@ -1,0 +1,13 @@
+.table-div {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+
+.table-header {
+  background: seagreen;
+}

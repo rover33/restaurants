@@ -10,8 +10,10 @@ function App() {
   return (
     <RestuarntProvider>
       <div className="App">
-        <Searchbox />
-        <Filters />
+        <div className="searching-boxs">
+          <Searchbox />
+          <Filters />
+        </div>
         <Table />
       </div>
     </RestuarntProvider>

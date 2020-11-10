@@ -1,5 +1,6 @@
 import {  useContext } from "react";
 import { RestaurantContext } from "../contexts/context";
+import "../styles/table.css"
 
 let Table = () => {
   const [tablesDisplayArr, setTablesDisplayArr] = useContext(RestaurantContext)
@@ -20,16 +21,18 @@ let Table = () => {
 
 
     return (
-      <table>
-          <tr>
-              <th>Name</th>
-              <th>City</th>
-              <th>State</th>
-              <th>Phone Number</th>
-              <th>Genre</th>
-          </tr>
-          {renderTables()}
+      <div className="table-div">
+        <table className="table">
+            <tr className="table-header">
+                <th>Name</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Phone Number</th>
+                <th>Genre</th>
+            </tr>
+            {renderTables()}
         </table>
+      </div>
     )
   };
 

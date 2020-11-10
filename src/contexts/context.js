@@ -11,7 +11,6 @@ export const RestuarntProvider  = props => {
 
     const [tablesDisplayArr, setTablesDisplayArr] = useState([]);
     const [tableLookUpArr, setTableLookUpArr] = useState([]);
-    const [filterArr, setFilterArr] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
   
   
@@ -29,7 +28,6 @@ export const RestuarntProvider  = props => {
           const sortData = tablesDisplayArr.sort((a, b) => (a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1))
           setTablesDisplayArr(sortData)
           setTableLookUpArr(sortData)
-          setFilterArr(sortData)
           setIsLoading(false)
         })
         .catch(() => {
@@ -39,7 +37,7 @@ export const RestuarntProvider  = props => {
 
     
     return (
-        <RestaurantContext.Provider value={[tablesDisplayArr, setTablesDisplayArr, tableLookUpArr, setTableLookUpArr, filterArr, setFilterArr]}>
+        <RestaurantContext.Provider value={[tablesDisplayArr, setTablesDisplayArr, tableLookUpArr, setTableLookUpArr]}>
             {props.children}
         </RestaurantContext.Provider>
     )

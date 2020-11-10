@@ -1,0 +1,19 @@
+.panel-search {
+  border-radius: 5px;
+  border: 1px solid green;
+  width: 25rem;
+  height: 10rem;
+  margin: 3rem 0;
+}
+
+.search {
+  background: seagreen;
+}
+
+.search-input {
+  margin-top: 3rem;
+}
+
+.search-submit {
+  margin-left: 1rem;
+}

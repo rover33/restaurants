@@ -1,0 +1,24 @@
+.panel-filters {
+  border-radius: 5px;
+  border: 1px solid green;
+  width: 35rem;
+  height: 10rem;
+  margin: 3rem 0;
+}
+
+.filters {
+  background: seagreen;
+}
+
+.filter-form {
+  margin-top: 3rem;
+  padding-right: 1rem;
+}
+
+.filter-state {
+  margin-right: 1rem;
+}
+
+.filter-genre {
+  margin-right: 1rem;
+}

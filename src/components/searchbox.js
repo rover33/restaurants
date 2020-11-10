@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import {RestaurantContext} from "../contexts/context";
+import "../styles/searchbox.css";
 
 
 const SearchBox = () => {
@@ -19,16 +20,20 @@ const SearchBox = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input 
-            type="text" 
-            name="Restaurant, City, Genre" 
-            placeholder="Restaurant, City, Genre"
-            value={tableLookUpArr.name} 
-            onChange={e => setSearchString(e.target.value)}
-            />
-            <button>Submit</button>
-        </form>
+        <div className="panel-search">
+            <div className="search">Search</div>
+            <form onSubmit={handleSubmit}>
+                <input 
+                className="search-input"
+                type="text" 
+                name="Restaurant, City, Genre" 
+                placeholder="Restaurant, City, Genre"
+                value={tableLookUpArr.name} 
+                onChange={e => setSearchString(e.target.value)}
+                />
+                <button className="search-submit">Submit</button>
+            </form>
+        </div>
     )
 }
 
