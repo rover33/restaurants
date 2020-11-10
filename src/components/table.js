@@ -1,6 +1,7 @@
 import {  useContext } from "react";
 import { RestaurantContext } from "../contexts/context";
 import "../styles/table.css"
+import Pagination from '@material-ui/lab/Pagination';
 
 
 let Table = () => {
@@ -35,6 +36,7 @@ let Table = () => {
             {renderTables()}
             </tbody>
         </table>
+        <Pagination count={5}/>
       </div>
     )
   };

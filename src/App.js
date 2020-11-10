@@ -5,6 +5,7 @@ import  {RestuarantProvider} from "./contexts/context"
 import Searchbox from "./components/SearchBox";
 import Filters from "./components/Filters";
 
+
 function App() {
 
   return (
