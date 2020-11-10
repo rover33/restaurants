@@ -1,4 +1,4 @@
-#This app can be viewed online at the link below.
+# This app can be viewed online at the link below.
 
 [Restaurant App](https://affectionate-jang-b9ffc9.netlify.app/)
 
