@@ -3,19 +3,20 @@ import React, { createContext, useState, useEffect, useReducer } from "react";
 
 export const RestaurantContext = createContext();
 
-const tablesReducer = (state, action) => {
-    
-}
 
 export const RestuarntProvider  = props => {
 
     const [tablesDisplayArr, setTablesDisplayArr] = useState([]);
     const [tableLookUpArr, setTableLookUpArr] = useState([]);
+    const [searchState, setSearchState] = useState("");
+    const [searchGenre, setSearchGenre] = useState("");
     const [isLoading, setIsLoading] = useState(false);
   
   
     useEffect(() => {
       setIsLoading(true)
+      setSearchGenre("")
+      setSearchState("")
       fetch(
         `https://code-challenge.spectrumtoolbox.com/api/restaurants`, {
           headers: {
@@ -37,7 +38,7 @@ export const RestuarntProvider  = props => {
 
     
     return (
-        <RestaurantContext.Provider value={[tablesDisplayArr, setTablesDisplayArr, tableLookUpArr, setTableLookUpArr]}>
+        <RestaurantContext.Provider value={[tablesDisplayArr, setTablesDisplayArr, tableLookUpArr, setTableLookUpArr, searchGenre, setSearchGenre, searchState, setSearchState]}>
             {props.children}
         </RestaurantContext.Provider>
     )

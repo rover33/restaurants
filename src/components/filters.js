@@ -4,20 +4,18 @@ import "../styles/filters.css"
 
 
 const Filters = () => {
-    const [searchState, setSearchState] = useState("");
-    const [searchGenre, setSearchGenre] = useState("");
-    const [tablesDisplayArr, setTablesDisplayArr, tableLookUpArr, setTableLookUpArr ] = useContext(RestaurantContext);
+    const [tablesDisplayArr, setTablesDisplayArr, tableLookUpArr, setTableLookUpArr, searchGenre, setSearchGenre, searchState, setSearchState ] = useContext(RestaurantContext);
 
     const handleStateChange = (e) => {
         e.preventDefault()
-        let filterArr = tableLookUpArr.filter(function(item){
-            if (item.state.includes(searchState) || item.genre.includes(searchGenre) || item.state.includes(searchState) && item.genre.includes(searchGenre)) {
-               console.log(tableLookUpArr)
+        let filterArr = tableLookUpArr.filter((item) =>{
+            if (item.state.includes(searchState) && item.genre.includes(searchGenre)) {
                 return true
             }
             return false
         })
         setTablesDisplayArr(filterArr)
+
     }
 
 
@@ -39,9 +37,13 @@ const Filters = () => {
     }
 
     const renderGenre = () => {
-        let genreArr = tableLookUpArr.map((item) => {
-            return item.genre
+        let genreArr = tableLookUpArr.flatMap((item) => {
+            console.log(item.genre)
+            return item.genre.split(",")
         })
+        console.log(genreArr)
+
+
 
         let filterGenre = Array.from(new Set(genreArr)).sort((a, b) => (a.toLowerCase() > b.toLowerCase() ? 1 : -1))
 
@@ -57,7 +59,7 @@ const Filters = () => {
     return (
         <div className="panel-filters">
             <div className="filters">Filters</div>
-            <form className="filter-form" onChange={handleStateChange}>
+            <form className="filter-form" onSubmit={handleStateChange}>
                 <select className="filter-state" onChange={e => setSearchState(e.target.value)}>
                     {renderState()}
                 </select>
