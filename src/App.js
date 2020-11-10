@@ -2,8 +2,8 @@ import React from "react";
 import './App.css';
 import Table from './components/table';
 import  {RestuarantProvider} from "./contexts/context"
-import Searchbox from "./components/SearchBox";
-import Filters from "./components/Filters";
+import Searchbox from "./components/searchbox";
+import Filters from "./components/filters";
 
 
 function App() {

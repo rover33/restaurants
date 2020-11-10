@@ -6,6 +6,7 @@ export const RestaurantContext = createContext();
 
 export const RestuarantProvider  = props => {
 
+   // states to be passed to different components
     const [tablesDisplayArr, setTablesDisplayArr] = useState([]);
     const [tableLookUpArr, setTableLookUpArr] = useState([]);
     const [searchState, setSearchState] = useState("");
