@@ -23,6 +23,7 @@ let Table = () => {
     return (
       <div className="table-div">
         <table className="table">
+          <tbody>
             <tr className="table-header">
                 <th>Name</th>
                 <th>City</th>
@@ -31,6 +32,7 @@ let Table = () => {
                 <th>Genre</th>
             </tr>
             {renderTables()}
+            </tbody>
         </table>
       </div>
     )

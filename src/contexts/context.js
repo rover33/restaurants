@@ -15,8 +15,6 @@ export const RestuarntProvider  = props => {
   
     useEffect(() => {
       setIsLoading(true)
-      setSearchGenre("")
-      setSearchState("")
       fetch(
         `https://code-challenge.spectrumtoolbox.com/api/restaurants`, {
           headers: {
@@ -29,6 +27,8 @@ export const RestuarntProvider  = props => {
           const sortData = tablesDisplayArr.sort((a, b) => (a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1))
           setTablesDisplayArr(sortData)
           setTableLookUpArr(sortData)
+          setSearchState("")
+          setSearchGenre("")
           setIsLoading(false)
         })
         .catch(() => {

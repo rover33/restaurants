@@ -4,24 +4,23 @@ import "../styles/filters.css"
 
 
 const Filters = () => {
-    const [tablesDisplayArr, setTablesDisplayArr, tableLookUpArr, setTableLookUpArr, searchGenre, setSearchGenre, searchState, setSearchState ] = useContext(RestaurantContext);
+    const [tablesDisplayArr, setTablesDisplayArr, searchGenre, setSearchGenre, searchState, setSearchState ] = useContext(RestaurantContext);
 
     const handleStateChange = (e) => {
         e.preventDefault()
-        let filterArr = tableLookUpArr.filter((item) =>{
+        let filterArr = tablesDisplayArr.filter((item) =>{
             if (item.state.includes(searchState) && item.genre.includes(searchGenre)) {
                 return true
             }
             return false
         })
         setTablesDisplayArr(filterArr)
-
     }
 
 
     const renderState = () => {
 
-        let stateArr = tableLookUpArr.map((item) => {
+        let stateArr = tablesDisplayArr.map((item) => {
             return item.state
         })
 
@@ -37,11 +36,9 @@ const Filters = () => {
     }
 
     const renderGenre = () => {
-        let genreArr = tableLookUpArr.flatMap((item) => {
-            console.log(item.genre)
+        let genreArr = tablesDisplayArr.flatMap((item) => {
             return item.genre.split(",")
         })
-        console.log(genreArr)
 
 
 

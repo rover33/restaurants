@@ -5,8 +5,8 @@ import "../styles/searchbox.css";
 
 const SearchBox = () => {
     const [searchString, setSearchString] = useState("");
-    const [tablesDisplayArr, setTablesDisplayArr, tableLookUpArr, setTableLookUpArr, setSearchGenre, setSearchState] = useContext(RestaurantContext);
-
+    const [tablesDisplayArr, setTablesDisplayArr, tableLookUpArr, setTableLookUpArr, searchGenre, setSearchGenre, searchState, setSearchState,] = useContext(RestaurantContext);
+    
     const handleSubmit = (e) => {
         e.preventDefault();
         if (tableLookUpArr === "") return tableLookUpArr
@@ -17,8 +17,8 @@ const SearchBox = () => {
             return false
         }) 
         setTablesDisplayArr(filterArr);
-        setSearchGenre("");
-        setSearchState("");
+        setSearchState("")
+        setSearchGenre("")
     }
 
     return (
