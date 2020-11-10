@@ -1,3 +1,8 @@
+#This app can be viewed online at the link below.
+
+[Restaurant App](https://affectionate-jang-b9ffc9.netlify.app/)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
